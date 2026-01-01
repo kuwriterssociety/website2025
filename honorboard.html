@@ -280,7 +280,46 @@
 
         mobileMenuButton.addEventListener('click', toggleMenu);
         
-    </script>
+    </script>  <script>
+  function openProfile(image, name, description) {
+    document.getElementById('profileImage').src = image;
+    document.getElementById('profileName').innerText = name;
+    document.getElementById('profileDescription').innerText = description;
+
+    document.getElementById('profileModal').classList.remove('hidden');
+    document.getElementById('profileModal').classList.add('flex');
+  }
+
+  function closeProfile() {
+    document.getElementById('profileModal').classList.add('hidden');
+    document.getElementById('profileModal').classList.remove('flex');
+  }
+</script>
+
+<!-- Profile Popup -->
+<div id="profileModal"
+     class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60">
+
+  <div class="bg-white rounded-xl max-w-sm w-full p-6 relative text-center">
+    
+    <button onclick="closeProfile()"
+            class="absolute top-2 right-3 text-gray-500 text-xl">&times;</button>
+
+    <img id="profileImage"
+         class="mx-auto h-32 w-32 rounded-full object-cover border mb-4" />
+
+    <h2 id="profileName"
+        class="text-lg font-semibold text-ku-blue mb-2"></h2>
+
+    <p id="profileDescription"
+       class="text-sm text-gray-600"></p>
+
+  </div>
+</div>
+
+
+	
 </body>
 </html>
+
 
