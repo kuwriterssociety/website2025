@@ -175,7 +175,7 @@
             <div class="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-8 text-left rounded-lg">
                 <p class="font-bold">Important Notice</p>
                 <p class="text-sm mt-1">
-                    This portal is designed only for downloading your certificate using your <b>Student ID, Name or last 5 digit of given phone number</b>. For certificate verification, you must visit our official website's <b><span style="color: red;"><a href="https://kuws.netlify.app/verification" class="kuws-nav-link">Certificate Verification portal</a></span></b> and use the unique Credential ID mentioned on your certificate. Verification cannot be performed using your Student ID.
+                    This portal is designed only for downloading your certificate using your <b>Name/Student ID/last 5 digit of given phone number</b>. For certificate verification, you must visit our official website's <b><span style="color: red;"><a href="https://kuws.netlify.app/verification" class="kuws-nav-link">Certificate Verification portal</a></span></b> and use the unique <b><span style="color: red;"><a href="https://kuws.netlify.app/verification" class="kuws-nav-link">Credential ID</a></span></b> mentioned on your certificate. Verification cannot be performed using your Student ID or Name.
                 </p>
             </div>
             <div class="mb-10 flex flex-col md:flex-row items-center justify-center gap-4">
@@ -183,7 +183,7 @@
                 <input 
                     type="text" 
                     id="search-input" 
-                    placeholder="Student ID/ Phone Number/ Name" 
+                    placeholder="Name/ID" 
                     class="w-full md:w-80 p-3 border border-gray-400 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 shadow-sm text-lg"
                     onkeyup="filterTable()"
                 >
@@ -220,7 +220,7 @@
                 <button onclick="handleDownload(modalDownloadBtn.getAttribute('data-href'), modalDownloadBtn.getAttribute('data-filename'))" 
                         id="modal-download-btn" 
                         data-href="#" 
-                        data-filename="certificate.png"
+                        data-filename="certificate.jpg"
                         class="flex items-center space-x-2 text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded-md transition duration-150 ml-auto mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -258,7 +258,7 @@
 
         // স্থির কনফিগারেশন: ফোল্ডারের নাম এবং ফাইলের এক্সটেনশন
         const FOLDER_NAME = 'certificates/';
-        const FILE_EXTENSION = '.png'; 
+        const FILE_EXTENSION = '.jpg'; 
 
         // *** ফাংশন: সিরিয়াল নাম্বার (SL) থেকে Local File Path তৈরি করে ***
         function getLocalFileLinks(serialNumber, name) {
@@ -299,7 +299,7 @@
             previewModal.classList.add('hidden');
             certImage.src = ''; 
             modalDownloadBtn.setAttribute('data-href', '#'); 
-            modalDownloadBtn.setAttribute('data-filename', 'certificate.png'); 
+            modalDownloadBtn.setAttribute('data-filename', 'certificate.jpg'); 
         }
 
         // *** Go Up Button Logic ***
@@ -313,7 +313,7 @@
             }
         });
         
-        // --- ডেটা পুনরুদ্ধার: মোট 61 জন এন্ট্রি ---
+        // --- ডেটা পুনরুদ্ধার: এন্ট্রি ---
         const csvData = `Student ID,Name,Status,
 # --- Present Participants (56) ---
 222641,Nourin Haque,,
@@ -372,6 +372,16 @@ Sc 242403,shuvojit Bachar,,
 251826,মোতাসাদ্দিক আহম্মেদ,,
 242411,Sumaiya Akter Aysha,,
 222117,Farhana Afrin,,
+26101,Jahid Hasan Nayon,,
+26102,Jumara Akter Juma,,
+26103,Mousumi Moni,,
+26104,Md. Tarikul Islam,,
+26105,Sahriar Parvez,,
+26106,Md Ashik Mostofa,,
+26107,Nayema Akhter,,
+26108,Piyas Ahmed,,
+26109,Amanur Rahman,,
+26110,Mohammad Ibnsina,,
 
 # --- Absent Participants (5) - SL 57 থেকে 61 ---
 Not Given,Abdul Momin,absent,
